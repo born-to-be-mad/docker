@@ -1,6 +1,7 @@
 # Playing with docker, docker-compose, swarn
 
 ## Samples
+
 ###  python-sample1
 This sample demonstrates how to pack simple python application as docker image and run it
 ```
