@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  nodeserver1:
+    container_name: testnode1
+    image: node
+    command: node -e "const http = require('http'); http.createServer((req, res) => { res.write('Hello from test1\n'); res.end() }).listen(9080)"
+    ports:
+      - "9080:9080"
+    networks:
+      - network1
+  nodeserver2:
+    container_name: testnode2
+    image: node
+    command: node -e "const http = require('http'); http.createServer((req, res) => { res.write('Hello from test2\n'); res.end() }).listen(9080)"
+    ports:
+      - "9081:9080"
+    networks:
+      - network1
+      - network2
+  nodeserver3:
+    container_name: testnode3
+    image: node
+    command: node -e "const http = require('http'); http.createServer((req, res) => { res.write('Hello from test3\n'); res.end() }).listen(9080)"
+    ports:
+      - "9082:9080"
+    networks:
+      - network2
+
+networks:
+  network1:
+    name: network1
+  network2:
+    name: network2
