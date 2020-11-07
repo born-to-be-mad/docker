@@ -1,7 +1,15 @@
 import time
 
-print("START greeting !")
+import pandas as pd
 
-while True:
-  print("Hello...")
-  time.sleep(1)
+print("### Python image started ###")
+
+print('pandas version:', pd.__version__)
+
+
+print("### Python image finished ###")
+
+# print("Make a message every second")
+# while True:
+#   print("Hello...")
+#   time.sleep(1)
